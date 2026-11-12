@@ -113,6 +113,7 @@ export interface MockCustomer {
   name: string;
   email?: string;
   totalSpentPaise: number;
+  walletBalancePaise?: number;
   visits: number;
   notes?: string;
   createdAt: string;

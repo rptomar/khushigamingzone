@@ -42,3 +42,9 @@ This document logs all key design, engineering, and architectural decisions for 
 - **Smart-Plug IoT Sensor Integration (`/api/occupancy`):** Ingests power wattage telemetry from smart plugs. If unmetered power consumption (> 25W) is detected while a station is marked available or without an active session, a `critical` anti-theft anomaly is automatically logged to alert the owner of off-the-books play.
 - **Vercel Cron Anomaly Scanner (`/api/cron/anomalies`):** Scans for sessions running over 4 hours, delayed stop request confirmations (> 10m), and suspicious clusters of void invoices. Secured via `CRON_SECRET`.
 - **Physical Cash Drawer Reconciliation:** Dedicated audit screen compares expected cash from registered receipts against physical currency denominations counted by management, creating immutable variance logs in `audit_log` and triggering shortage alerts if theft is suspected.
+
+## 8. Customer CRM, VIP Memberships & Prepaid Gaming Wallets
+- **Tiered VIP Memberships (`/owner/memberships`):** Customers purchase hour bundles (e.g. 30-Hour VIP Gold Snooker Pass for ₹6,000, saving 33%). When starting play on the table kiosk, players can pick their active VIP Pass, and hours are automatically deducted per-minute rather than incurring hourly bills.
+- **Expiring Pass Warnings:** System flags passes expiring within 7 days to trigger automated retention offers at reception.
+- **Prepaid Gaming Wallets (`/owner/customers`):** Every customer profile maintains a prepaid wallet float allowing instant cashless checkout, store credit refunds, and bonus promotional balances.
+- **Customer Lifetime Value (LTV) Intelligence:** Centralized player CRM tracks total historical gaming spend, visit frequencies, preferred stations, and anti-theft session histories.

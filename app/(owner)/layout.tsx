@@ -16,6 +16,8 @@ import {
   ChevronDown,
   Layers,
   Banknote,
+  Users,
+  Crown,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -30,11 +32,13 @@ export default function OwnerLayout({
 
   const navItems = [
     { label: "Overview", href: "/owner", icon: LayoutDashboard },
-    { label: "Live Reception", href: "/reception", icon: Tv, external: true },
+    { label: "Live Desk", href: "/reception", icon: Tv, external: true },
     { label: "Sessions", href: "/owner/sessions", icon: History },
+    { label: "VIP Passes", href: "/owner/memberships", icon: Crown },
+    { label: "Customers", href: "/owner/customers", icon: Users },
     { label: "Alerts", href: "/owner/alerts", icon: AlertTriangle },
     { label: "Cash Audit", href: "/owner/reconciliation", icon: Banknote },
-    { label: "Zone Settings", href: "/owner/settings", icon: Settings },
+    { label: "Settings", href: "/owner/settings", icon: Settings },
   ];
 
   const handleLogout = async () => {
