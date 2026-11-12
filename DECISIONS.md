@@ -48,3 +48,8 @@ This document logs all key design, engineering, and architectural decisions for 
 - **Expiring Pass Warnings:** System flags passes expiring within 7 days to trigger automated retention offers at reception.
 - **Prepaid Gaming Wallets (`/owner/customers`):** Every customer profile maintains a prepaid wallet float allowing instant cashless checkout, store credit refunds, and bonus promotional balances.
 - **Customer Lifetime Value (LTV) Intelligence:** Centralized player CRM tracks total historical gaming spend, visit frequencies, preferred stations, and anti-theft session histories.
+
+## 9. Reseller Multi-Tenant Architecture & SaaS Monetization
+- **Tenant #1 Master Reseller Model (`/platform`):** Khushi Gaming Zone acts both as Flagship Tenant #1 and as the Master SaaS Reseller, able to onboard third-party gaming clubs onto autonomous subdomains/slugs (`app.khushigaming.com/[slug]`).
+- **Reseller Commission & Subscription Revenue:** Tracks active client clubs, managed table quotas (35+ tables across mall networks), and recurring subscription fees (Starter ₹2,999/mo, Pro ₹4,999/mo, Enterprise ₹8,999/mo).
+- **Remote Diagnostics & Scope Switcher:** Reseller super-admins can inspect remote table telemetries and suspend or reactivate subscriptions with real-time audit logs.

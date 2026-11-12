@@ -135,6 +135,21 @@ export interface MockMembership {
   createdAt: string;
 }
 
+export interface MockTenant {
+  id: string;
+  name: string;
+  slug: string;
+  status: "active" | "suspended" | "trial";
+  planName: string;
+  monthlyFeePaise: number;
+  outletsCount: number;
+  tablesCount: number;
+  ownerEmail: string;
+  ownerPhone: string;
+  city: string;
+  joinedAt: string;
+}
+
 export const DEFAULT_TENANT_ID = "tenant-kgz-001";
 export const DEFAULT_OUTLET_ID = "outlet-kgz-mall-001";
 
@@ -148,6 +163,7 @@ class MemoryStore {
   public auditLogs: MockAuditEntry[] = [];
   public customers: MockCustomer[] = [];
   public memberships: MockMembership[] = [];
+  public tenants: MockTenant[] = [];
   public sessionEvents: { id: string; sessionId: string; eventType: string; actorRole: string; actorId: string; note?: string; createdAt: string }[] = [];
   public otps: { id: string; tenantId: string; phone: string; code: string; expiresAt: number; attempts: number }[] = [];
 
@@ -471,6 +487,80 @@ class MemoryStore {
         entityId: "sess-0-1",
         reason: "Customer phone dead, requested manual walk-in start",
         createdAt: new Date(now - 60 * 60000).toISOString(),
+      },
+    ];
+
+    // 7. Reseller Tenants Network
+    this.tenants = [
+      {
+        id: DEFAULT_TENANT_ID,
+        name: "Khushi Gaming Zone (Flagship Arena)",
+        slug: "khushi-gaming-zone",
+        status: "active",
+        planName: "Reseller HQ / Enterprise",
+        monthlyFeePaise: 0,
+        outletsCount: 2,
+        tablesCount: 8,
+        ownerEmail: "owner@khushigaming.com",
+        ownerPhone: "9876543210",
+        city: "Delhi NCR",
+        joinedAt: new Date(Date.now() - 90 * 86400000).toISOString(),
+      },
+      {
+        id: "tenant-velocity-002",
+        name: "Velocity Cue Sports Club",
+        slug: "velocity-cue-sports",
+        status: "active",
+        planName: "Professional (₹4,999/mo)",
+        monthlyFeePaise: 499900,
+        outletsCount: 1,
+        tablesCount: 6,
+        ownerEmail: "manager@velocitycues.com",
+        ownerPhone: "9811099231",
+        city: "Connaught Place, New Delhi",
+        joinedAt: new Date(Date.now() - 45 * 86400000).toISOString(),
+      },
+      {
+        id: "tenant-apex-003",
+        name: "Apex Snooker & Pool Lounge",
+        slug: "apex-snooker-lounge",
+        status: "active",
+        planName: "Enterprise Arena (₹8,999/mo)",
+        monthlyFeePaise: 899900,
+        outletsCount: 2,
+        tablesCount: 12,
+        ownerEmail: "vikram@apexsnooker.com",
+        ownerPhone: "9899012345",
+        city: "CyberCity, Gurugram",
+        joinedAt: new Date(Date.now() - 30 * 86400000).toISOString(),
+      },
+      {
+        id: "tenant-cyberzone-004",
+        name: "CyberZone Esports & Arcade",
+        slug: "cyberzone-esports",
+        status: "active",
+        planName: "Starter Arena (₹2,999/mo)",
+        monthlyFeePaise: 299900,
+        outletsCount: 1,
+        tablesCount: 5,
+        ownerEmail: "support@cyberzone.in",
+        ownerPhone: "9871144220",
+        city: "Sector 18, Noida",
+        joinedAt: new Date(Date.now() - 15 * 86400000).toISOString(),
+      },
+      {
+        id: "tenant-striker-005",
+        name: "Striker Billiards Academy",
+        slug: "striker-billiards",
+        status: "trial",
+        planName: "14-Day Free Trial",
+        monthlyFeePaise: 0,
+        outletsCount: 1,
+        tablesCount: 4,
+        ownerEmail: "striker.academy@gmail.com",
+        ownerPhone: "9810155331",
+        city: "South Extension, New Delhi",
+        joinedAt: new Date(Date.now() - 6 * 86400000).toISOString(),
       },
     ];
 
