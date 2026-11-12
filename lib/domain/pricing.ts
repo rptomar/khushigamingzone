@@ -14,6 +14,78 @@ export interface PricingPlanConfig {
   };
 }
 
+export const DEFAULT_PRICING_PLANS: (PricingPlanConfig & { id: string; resourceTypeCode: string; name: string })[] = [
+  {
+    id: "plan-snooker-standard",
+    resourceTypeCode: "snooker",
+    name: "Snooker Hourly Standard",
+    type: "hourly",
+    ratePaise: 30000,
+    minChargePaise: 5000,
+    billingIncrementMin: 15,
+    rounding: "up",
+    graceMin: 3,
+    peakRules: {
+      enabled: true,
+      peakMultiplier: 1.25,
+      startHour: 18,
+      endHour: 23,
+      days: [5, 6, 0],
+    },
+  },
+  {
+    id: "plan-pool-standard",
+    resourceTypeCode: "pool",
+    name: "English Pool Hourly",
+    type: "hourly",
+    ratePaise: 20000,
+    minChargePaise: 4000,
+    billingIncrementMin: 15,
+    rounding: "up",
+    graceMin: 3,
+  },
+  {
+    id: "plan-ps5-standard",
+    resourceTypeCode: "ps5",
+    name: "PS5 Pro Lounge Gaming",
+    type: "hourly",
+    ratePaise: 15000,
+    minChargePaise: 3000,
+    billingIncrementMin: 15,
+    rounding: "up",
+    graceMin: 3,
+    peakRules: {
+      enabled: true,
+      peakMultiplier: 1.2,
+      startHour: 17,
+      endHour: 22,
+      days: [5, 6, 0],
+    },
+  },
+  {
+    id: "plan-tt-standard",
+    resourceTypeCode: "table_tennis",
+    name: "Table Tennis Olympic",
+    type: "hourly",
+    ratePaise: 12000,
+    minChargePaise: 3000,
+    billingIncrementMin: 15,
+    rounding: "up",
+    graceMin: 3,
+  },
+  {
+    id: "plan-carrom-standard",
+    resourceTypeCode: "carrom",
+    name: "Carrom Board Standard",
+    type: "hourly",
+    ratePaise: 8000,
+    minChargePaise: 2000,
+    billingIncrementMin: 15,
+    rounding: "up",
+    graceMin: 3,
+  },
+];
+
 export interface ComputeChargeInput {
   plan: PricingPlanConfig;
   startedAt: Date | string;
