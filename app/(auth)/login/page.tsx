@@ -55,7 +55,6 @@ export default function LoginPage() {
       toast.error("Please enter email and password");
       return;
     }
-
     setLoading(true);
     try {
       const res = await fetch("/api/auth/login", {
