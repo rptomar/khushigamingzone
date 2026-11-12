@@ -156,3 +156,4 @@ export function getWhatsAppProvider(): IWhatsAppProvider {
   }
   return new MockWhatsAppProvider();
 }
+

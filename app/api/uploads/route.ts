@@ -40,3 +40,4 @@ export async function GET(req: NextRequest) {
   const signedParams = storage.getSignedUploadParams(folder);
   return NextResponse.json(signedParams);
 }
+

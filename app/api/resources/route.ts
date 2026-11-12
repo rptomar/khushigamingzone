@@ -86,3 +86,4 @@ export async function PATCH(req: Request) {
     return NextResponse.json({ error: err.message || "Failed to update resource" }, { status: 500 });
   }
 }
+

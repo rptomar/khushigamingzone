@@ -80,11 +80,10 @@ export default function OwnerLayout({
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all ${
-                    isActive
+                  className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all ${isActive
                       ? "bg-violet-600/20 text-violet-300 border border-violet-500/30 shadow-sm"
                       : "text-slate-400 hover:text-white hover:bg-white/[0.05]"
-                  }`}
+                    }`}
                 >
                   <Icon className="w-4 h-4" />
                   <span>{item.label}</span>
@@ -133,9 +132,8 @@ export default function OwnerLayout({
             <Link
               key={item.href}
               href={item.href}
-              className={`flex flex-col items-center gap-1 p-2 rounded-xl text-[10px] font-medium transition-all ${
-                isActive ? "text-violet-400 font-bold" : "text-slate-400"
-              }`}
+              className={`flex flex-col items-center gap-1 p-2 rounded-xl text-[10px] font-medium transition-all ${isActive ? "text-violet-400 font-bold" : "text-slate-400"
+                }`}
             >
               <Icon className="w-5 h-5" />
               <span>{item.label.split(" ")[0]}</span>

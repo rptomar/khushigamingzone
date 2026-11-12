@@ -192,3 +192,4 @@ describe("Session State Machine", () => {
     expect(result.currentState).toBe("stopping");
   });
 });
+

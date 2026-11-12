@@ -37,3 +37,4 @@ export function playAlertChime() {
     console.warn("Audio autoplay blocked or context unavailable", err);
   }
 }
+

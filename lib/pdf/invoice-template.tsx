@@ -353,3 +353,4 @@ export const InvoiceDocument: React.FC<{ data: InvoicePdfData }> = ({ data }) =>
     </Document>
   );
 };
+

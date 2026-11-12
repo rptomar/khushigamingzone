@@ -28,3 +28,4 @@ export function formatDuration(seconds: number): string {
     .toString()
     .padStart(2, "0")}`;
 }
+

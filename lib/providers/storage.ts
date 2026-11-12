@@ -128,3 +128,4 @@ export class CloudinaryStorageProvider implements IStorageProvider {
 export function getStorageProvider(): IStorageProvider {
   return new CloudinaryStorageProvider();
 }
+
