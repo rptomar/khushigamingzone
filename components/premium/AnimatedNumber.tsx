@@ -40,7 +40,7 @@ export function AnimatedNumber({
 
     const animId = window.requestAnimationFrame(step);
     return () => window.cancelAnimationFrame(animId);
-  }, [value, duration]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [value, duration]);
 
   return (
     <span className={className}>

@@ -65,7 +65,6 @@ export class MockPaymentProvider implements IPaymentProvider {
     };
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async verifyWebhook(body: string, signature: string): Promise<WebhookVerificationResult> {
     try {
       const payload = typeof body === "string" ? JSON.parse(body) : body;
@@ -82,7 +81,6 @@ export class MockPaymentProvider implements IPaymentProvider {
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async checkPaymentStatus(providerRef: string): Promise<{ isPaid: boolean; status: string; amountPaise?: number }> {
     return {
       isPaid: false,

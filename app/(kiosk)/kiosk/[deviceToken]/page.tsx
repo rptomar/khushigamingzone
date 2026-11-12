@@ -15,8 +15,6 @@ import confetti from "canvas-confetti";
 import { toast } from "sonner";
 import {
   Play,
-  Phone,
-  ShieldCheck,
   CheckCircle2,
   StopCircle,
   Pause,
@@ -53,7 +51,6 @@ export default function KioskPage() {
   // Local interactive flow states
   const [step, setStep] = useState<KioskStep>("idle");
   const [phone, setPhone] = useState("");
-  const [customerName, setCustomerName] = useState("");
   const [otp, setOtp] = useState("");
   const [devOtpHint, setDevOtpHint] = useState<string | null>(null);
   const [selectedPlan, setSelectedPlan] = useState<"hourly" | "membership">("hourly");
@@ -171,7 +168,6 @@ export default function KioskPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           phone,
-          customerName: customerName || undefined,
           planName: selectedPlan === "membership" ? "VIP Membership" : "Standard Hourly",
         }),
       });
@@ -262,9 +258,8 @@ export default function KioskPage() {
           {/* Subtle Live Connection Indicator */}
           <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-mono">
             <span
-              className={`w-2 h-2 rounded-full ${
-                isReconnecting ? "bg-amber-400 animate-pulse" : "bg-emerald-400"
-              }`}
+              className={`w-2 h-2 rounded-full ${isReconnecting ? "bg-amber-400 animate-pulse" : "bg-emerald-400"
+                }`}
             />
             <span className="text-slate-300">
               {isReconnecting ? "Reconnecting..." : "Table Live"}
@@ -429,11 +424,10 @@ export default function KioskPage() {
               {/* Hourly Plan Option */}
               <div
                 onClick={() => setSelectedPlan("hourly")}
-                className={`p-6 rounded-2xl border cursor-pointer transition-all ${
-                  selectedPlan === "hourly"
+                className={`p-6 rounded-2xl border cursor-pointer transition-all ${selectedPlan === "hourly"
                     ? "bg-violet-600/20 border-violet-500 ring-2 ring-violet-500/40 shadow-xl shadow-violet-600/20"
                     : "bg-white/[0.04] border-white/10 hover:border-white/20"
-                }`}
+                  }`}
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
@@ -453,11 +447,10 @@ export default function KioskPage() {
               {/* Membership Option */}
               <div
                 onClick={() => setSelectedPlan("membership")}
-                className={`p-6 rounded-2xl border cursor-pointer transition-all ${
-                  selectedPlan === "membership"
+                className={`p-6 rounded-2xl border cursor-pointer transition-all ${selectedPlan === "membership"
                     ? "bg-amber-500/20 border-amber-500 ring-2 ring-amber-500/40 shadow-xl shadow-amber-500/20"
                     : "bg-white/[0.04] border-white/10 hover:border-white/20"
-                }`}
+                  }`}
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold uppercase tracking-wider text-amber-300">

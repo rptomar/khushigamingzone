@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { mockStore, MockTenant } from "@/lib/db/mock-store";
-import { formatPaise } from "@/lib/utils";
 
 export const runtime = "nodejs";
 

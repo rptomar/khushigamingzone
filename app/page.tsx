@@ -6,25 +6,18 @@ import { KhushiLogo } from "@/components/premium/KhushiLogo";
 import { formatPaise } from "@/lib/utils";
 import {
   ShieldAlert,
-  ShieldCheck,
   Tv,
   QrCode,
   Smartphone,
-  TrendingUp,
   Clock,
   ArrowRight,
   Zap,
   CheckCircle2,
   Lock,
-  Sparkles,
-  Users,
   ChevronRight,
   Calculator,
   Play,
-  RotateCcw,
   Banknote,
-  Flame,
-  Layers,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -32,7 +25,7 @@ export default function MarketingLandingPage() {
   // Interactive Live Demo Table State
   const [demoStep, setDemoStep] = useState<"idle" | "running" | "stopping" | "billed">("idle");
   const [demoSeconds, setDemoSeconds] = useState(0);
-  const [demoCustomerPhone, setDemoCustomerPhone] = useState("9820012345");
+  const demoCustomerPhone = "9820012345";
 
   // ROI Calculator State
   const [calcTables, setCalcTables] = useState(6);

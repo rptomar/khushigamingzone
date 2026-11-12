@@ -2,12 +2,13 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { KhushiLogo } from "@/components/premium/KhushiLogo";
 import { GlowCard } from "@/components/premium/GlowCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { Shield, Sparkles, Key, ArrowRight, Lock, UserCheck } from "lucide-react";
+import { Shield, Sparkles, Key, ArrowRight } from "lucide-react";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -241,12 +242,12 @@ export default function LoginPage() {
           <div className="text-center">
             <p className="text-xs text-slate-500">
               Need table kiosk screen?{" "}
-              <a
-                href="/kiosk/kiosk-snooker-1"
+              <Link
+                href="/kiosk/token_snooker_1"
                 className="text-violet-400 hover:underline font-medium"
               >
                 Launch Kiosk for Table 1 &rarr;
-              </a>
+              </Link>
             </p>
           </div>
         </div>
