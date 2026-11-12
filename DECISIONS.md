@@ -53,3 +53,7 @@ This document logs all key design, engineering, and architectural decisions for 
 - **Tenant #1 Master Reseller Model (`/platform`):** Khushi Gaming Zone acts both as Flagship Tenant #1 and as the Master SaaS Reseller, able to onboard third-party gaming clubs onto autonomous subdomains/slugs (`app.khushigaming.com/[slug]`).
 - **Reseller Commission & Subscription Revenue:** Tracks active client clubs, managed table quotas (35+ tables across mall networks), and recurring subscription fees (Starter ₹2,999/mo, Pro ₹4,999/mo, Enterprise ₹8,999/mo).
 - **Remote Diagnostics & Scope Switcher:** Reseller super-admins can inspect remote table telemetries and suspend or reactivate subscriptions with real-time audit logs.
+
+## 10. High-Conversion Marketing Architecture & Interactive Sandbox
+- **Startup Landing Experience (`/`):** Built with luxury esports branding (`#07070B`), featuring dynamic 3D-tilt hero typography, an interactive in-browser simulation of the table kiosk and stopwatch billing workflow, an interactive cash leakage ROI calculator widget, anti-theft architectural deep-dives, and SaaS pricing tiers.
+- **Immediate Zero-Friction Navigation:** Direct navigation links to `/kiosk/[deviceToken]` (kiosk view), `/reception` (staff live desk), `/owner` (telemetrics hub), and `/platform` (reseller fleet) allow instant, self-guided executive demonstration without preliminary configuration.
