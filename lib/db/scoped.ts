@@ -1,5 +1,6 @@
 import { mockStore, DEFAULT_TENANT_ID, MockResource, MockSession, MockInvoice, MockPayment, MockAlert, MockAuditEntry } from "./mock-store";
 import { formatPaise } from "@/lib/utils";
+import { getWhatsAppProvider } from "@/lib/providers/whatsapp";
 
 /**
  * Central Scoped Data-Access Layer.
@@ -315,6 +316,24 @@ export function getScopedDb(tenantId: string = DEFAULT_TENANT_ID) {
       const customer = mockStore.customers.find((c) => c.id === invoice.customerId);
       if (customer) {
         customer.totalSpentPaise += invoice.totalPaise;
+      }
+
+      // Auto-dispatch WhatsApp invoice to customer
+      if (invoice.customerPhone) {
+        try {
+          const whatsapp = getWhatsAppProvider();
+          whatsapp.sendInvoice({
+            tenantId,
+            phone: invoice.customerPhone,
+            customerName: invoice.customerName,
+            invoiceNo: invoice.invoiceNo,
+            amountPaise: invoice.totalPaise,
+            pdfUrl: invoice.pdfUrl || `/api/invoices/${invoice.id}/pdf`,
+            sessionMinutes: 60,
+          }).catch((e) => console.error("WhatsApp auto-dispatch error:", e));
+        } catch (e) {
+          console.error("WhatsApp provider error:", e);
+        }
       }
 
       mockStore.auditLogs.unshift({

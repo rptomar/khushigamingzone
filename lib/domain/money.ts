@@ -7,6 +7,14 @@ export function paiseToRupees(paise: number): number {
   return paise / 100;
 }
 
+export function paiseToRupeesFormatted(paise: number): string {
+  const rupees = paise / 100;
+  return rupees.toLocaleString("en-IN", {
+    minimumFractionDigits: rupees % 1 === 0 ? 0 : 2,
+    maximumFractionDigits: 2,
+  });
+}
+
 export function rupeesToPaise(rupees: number): number {
   return Math.round(rupees * 100);
 }

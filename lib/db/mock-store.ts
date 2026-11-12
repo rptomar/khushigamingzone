@@ -147,6 +147,7 @@ class MemoryStore {
   public auditLogs: MockAuditEntry[] = [];
   public customers: MockCustomer[] = [];
   public memberships: MockMembership[] = [];
+  public sessionEvents: { id: string; sessionId: string; eventType: string; actorRole: string; actorId: string; note?: string; createdAt: string }[] = [];
   public otps: { id: string; tenantId: string; phone: string; code: string; expiresAt: number; attempts: number }[] = [];
 
   constructor() {

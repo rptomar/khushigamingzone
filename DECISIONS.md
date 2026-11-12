@@ -30,3 +30,9 @@ This document logs all key design, engineering, and architectural decisions for 
 - **Luxury Esports Aesthetic:** Deep near-black background (`#07070B`), electric violet (`#8B5CF6`) to cyan (`#06B6D4`) primary accents, warm gold (`#F59E0B`) for revenue and money moments.
 - **Typography:** `Space Grotesk` (headings & display), `Inter` (body & controls), `JetBrains Mono` (live timers, tabular numbers & monetary values).
 - **Live Board Updates:** Real-time dashboard updates via short polling (3 seconds) centralized in the `useLive()` hook, avoiding fragile WebSockets in serverless Vercel environments.
+
+## 6. PDF Invoices, Payments & Notification Delivery
+- **PDF Generation via `@react-pdf/renderer`:** PDF generation runs on the Node.js runtime using `@react-pdf/renderer` (`InvoiceDocument`), streaming directly from `/api/invoices/[invoiceId]/pdf` to eliminate heavy headless browser / Puppeteer dependencies and stay well within Vercel's 50MB function bundle limit.
+- **Dynamic UPI Payment Links:** Generates `upi://pay?pa=...` URIs with exact invoice number (`tr`), amount, and merchant name, encoded into high-density 2D QR codes via `qrcode`.
+- **Payment Webhook Idempotency:** Razorpay webhook handler at `/api/webhooks/razorpay` verifies HMAC SHA256 signatures, checks idempotency against the invoice state, updates session and resource availability, logs audit records, and automatically triggers asynchronous WhatsApp invoice dispatch.
+- **WhatsApp Notification Service:** Pluggable notification service supporting `Mock` (in-memory queue with audit logs) and `Meta/Interakt` Cloud API templates (`gaming_invoice_v1`), automatically attaching the PDF invoice URL.
