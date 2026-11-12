@@ -36,3 +36,9 @@ This document logs all key design, engineering, and architectural decisions for 
 - **Dynamic UPI Payment Links:** Generates `upi://pay?pa=...` URIs with exact invoice number (`tr`), amount, and merchant name, encoded into high-density 2D QR codes via `qrcode`.
 - **Payment Webhook Idempotency:** Razorpay webhook handler at `/api/webhooks/razorpay` verifies HMAC SHA256 signatures, checks idempotency against the invoice state, updates session and resource availability, logs audit records, and automatically triggers asynchronous WhatsApp invoice dispatch.
 - **WhatsApp Notification Service:** Pluggable notification service supporting `Mock` (in-memory queue with audit logs) and `Meta/Interakt` Cloud API templates (`gaming_invoice_v1`), automatically attaching the PDF invoice URL.
+
+## 7. Owner Telemetry & Anti-Theft Anomaly Engine
+- **Live Executive Telemetry:** Executive dashboard calculates multi-period revenues, live arena occupancy, active VIP members, and 7-day revenue velocity with Recharts.
+- **Smart-Plug IoT Sensor Integration (`/api/occupancy`):** Ingests power wattage telemetry from smart plugs. If unmetered power consumption (> 25W) is detected while a station is marked available or without an active session, a `critical` anti-theft anomaly is automatically logged to alert the owner of off-the-books play.
+- **Vercel Cron Anomaly Scanner (`/api/cron/anomalies`):** Scans for sessions running over 4 hours, delayed stop request confirmations (> 10m), and suspicious clusters of void invoices. Secured via `CRON_SECRET`.
+- **Physical Cash Drawer Reconciliation:** Dedicated audit screen compares expected cash from registered receipts against physical currency denominations counted by management, creating immutable variance logs in `audit_log` and triggering shortage alerts if theft is suspected.
