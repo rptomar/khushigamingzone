@@ -87,7 +87,7 @@ export default function OwnerDashboardPage() {
             </span>
           </div>
           <p className="text-sm text-slate-400 mt-1">
-            Real-time remote control, revenue tracking & anti-theft monitoring for Khushi Gaming Zone.
+            Real-time remote control, revenue tracking & anti-theft monitoring for Ps07 Gaming Arena.
           </p>
         </div>
 

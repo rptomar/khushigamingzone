@@ -139,7 +139,7 @@ export async function POST(req: NextRequest) {
       id: `audit-mem-${Date.now()}`,
       tenantId: DEFAULT_TENANT_ID,
       actorId: "owner_admin",
-      actorName: "Khushi Owner",
+      actorName: "Ps07 Owner",
       actorRole: "owner",
       action: "issue_membership_pass",
       entity: "membership",

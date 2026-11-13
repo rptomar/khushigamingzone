@@ -20,6 +20,39 @@ const DEMO_USERS: Record<
     password: string;
   }
 > = {
+  "superadmin@ps07gaming.com": {
+    id: "usr-admin-0",
+    name: "Platform Super Admin",
+    role: "super_admin",
+    tenantId: DEFAULT_TENANT_ID,
+    outletIds: [DEFAULT_OUTLET_ID],
+    password: "admin123",
+  },
+  "owner@ps07gaming.com": {
+    id: "usr-owner-1",
+    name: "Ps07 Owner (Vikram)",
+    role: "owner",
+    tenantId: DEFAULT_TENANT_ID,
+    outletIds: [DEFAULT_OUTLET_ID],
+    password: "owner123",
+  },
+  "manager@ps07gaming.com": {
+    id: "usr-manager-1",
+    name: "Sanjay Manager",
+    role: "manager",
+    tenantId: DEFAULT_TENANT_ID,
+    outletIds: [DEFAULT_OUTLET_ID],
+    password: "manager123",
+  },
+  "reception@ps07gaming.com": {
+    id: "usr-staff-1",
+    name: "Ramesh Receptionist",
+    role: "receptionist",
+    tenantId: DEFAULT_TENANT_ID,
+    outletIds: [DEFAULT_OUTLET_ID],
+    password: "reception123",
+  },
+  // Backward-compatible fallback aliases
   "superadmin@khushigaming.com": {
     id: "usr-admin-0",
     name: "Platform Super Admin",
@@ -30,7 +63,7 @@ const DEMO_USERS: Record<
   },
   "owner@khushigaming.com": {
     id: "usr-owner-1",
-    name: "Khushi Owner (Vikram)",
+    name: "Ps07 Owner (Vikram)",
     role: "owner",
     tenantId: DEFAULT_TENANT_ID,
     outletIds: [DEFAULT_OUTLET_ID],

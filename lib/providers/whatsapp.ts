@@ -110,7 +110,7 @@ export class MetaWhatsAppProvider implements IWhatsAppProvider {
                     type: "document",
                     document: {
                       link: params.pdfUrl,
-                      filename: `Khushi_Invoice_${params.invoiceNo}.pdf`,
+                      filename: `Ps07_Invoice_${params.invoiceNo}.pdf`,
                     },
                   },
                 ],

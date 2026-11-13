@@ -54,7 +54,7 @@ export async function GET(
         const invoice = mockStore.invoices.find((inv) => inv.sessionId === activeSession.id);
         if (invoice) {
           invoiceData = invoice;
-          const upiDeepLink = `upi://pay?pa=khushigaming@upi&pn=Khushi%20Gaming%20Zone&am=${(
+          const upiDeepLink = `upi://pay?pa=ps07gaming@upi&pn=Ps07%20Gaming%20Arena&am=${(
             invoice.totalPaise / 100
           ).toFixed(2)}&tn=Session%20${resource.name}&tr=${invoice.invoiceNo}`;
 

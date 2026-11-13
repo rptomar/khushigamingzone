@@ -494,14 +494,14 @@ class MemoryStore {
     this.tenants = [
       {
         id: DEFAULT_TENANT_ID,
-        name: "Khushi Gaming Zone (Flagship Arena)",
-        slug: "khushi-gaming-zone",
+        name: "Ps07 Gaming Arena (Flagship Arena)",
+        slug: "ps07-gaming-arena",
         status: "active",
         planName: "Reseller HQ / Enterprise",
         monthlyFeePaise: 0,
         outletsCount: 2,
         tablesCount: 8,
-        ownerEmail: "owner@khushigaming.com",
+        ownerEmail: "owner@ps07gaming.com",
         ownerPhone: "9876543210",
         city: "Delhi NCR",
         joinedAt: new Date(Date.now() - 90 * 86400000).toISOString(),

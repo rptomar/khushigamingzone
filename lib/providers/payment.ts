@@ -37,7 +37,7 @@ export interface IPaymentProvider {
 export class MockPaymentProvider implements IPaymentProvider {
   async createUpiQr(params: CreateUpiQrParams): Promise<UpiQrResult> {
     const amountRupees = (params.amountPaise / 100).toFixed(2);
-    const merchantName = encodeURIComponent(params.merchantName || "Khushi Gaming Zone");
+    const merchantName = encodeURIComponent(params.merchantName || "Ps07 Gaming Arena");
     const note = encodeURIComponent(params.note || `Table Bill #${params.invoiceNo}`);
     const tr = params.invoiceNo;
     
@@ -118,7 +118,7 @@ export class RazorpayPaymentProvider implements IPaymentProvider {
         },
         body: JSON.stringify({
           type: "upi_qr",
-          name: params.merchantName || "Khushi Gaming Zone",
+          name: params.merchantName || "Ps07 Gaming Arena",
           usage: "single_use",
           fixed_amount: true,
           payment_amount: params.amountPaise,

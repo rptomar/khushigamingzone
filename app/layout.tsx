@@ -22,7 +22,7 @@ const fontMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Khushi Gaming Zone — Smart Gaming Zone Management OS",
+  title: "Ps07 Gaming Arena — Smart Gaming Zone Management OS",
   description: "Next-generation SaaS platform for Snooker, Pool & Gaming Lounges. Kiosk-first automated time tracking, UPI billing & anti-theft controls.",
   icons: {
     icon: "/favicon.ico",

@@ -8,7 +8,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 async function runSeed() {
-  console.log("🌱 Starting Khushi Gaming Zone Master Seed Script...");
+  console.log("🌱 Starting Ps07 Gaming Arena Master Seed Script...");
 
   const databaseUrl = process.env.DATABASE_URL;
   if (!databaseUrl || databaseUrl.includes("localhost") || databaseUrl.includes("postgres:postgres@")) {
@@ -23,16 +23,16 @@ async function runSeed() {
 
     console.log("🔌 Connected to Neon Postgres database.");
 
-    const passwordHash = await bcrypt.hash("KhushiAdmin@2026", 10);
-    const staffHash = await bcrypt.hash("KhushiStaff@2026", 10);
+    const passwordHash = await bcrypt.hash("Ps07Admin@2026", 10);
+    const staffHash = await bcrypt.hash("Ps07Staff@2026", 10);
 
     // 1. Reseller
     console.log("Creating Reseller HQ...");
     await (db.insert(schema.resellers) as any)
       .values({
         id: "reseller-kgz-001",
-        name: "Khushi Gaming Network Reseller",
-        email: "reseller@khushigaming.com",
+        name: "Ps07 Gaming Network Reseller",
+        email: "reseller@ps07gaming.com",
         phone: "9876543210",
         commissionRate: 20,
         status: "active",
@@ -40,17 +40,17 @@ async function runSeed() {
       .onConflictDoNothing();
 
     // 2. Tenant HQ
-    console.log("Creating Tenant #1: Khushi Gaming Zone HQ...");
+    console.log("Creating Tenant #1: Ps07 Gaming Arena HQ...");
     await (db.insert(schema.tenants) as any)
       .values({
         id: "tenant-kgz-001",
         resellerId: "reseller-kgz-001",
-        name: "Khushi Gaming Zone (Flagship Arena)",
-        slug: "khushi-gaming-zone",
-        upiVpa: "khushigaming@okaxis",
+        name: "Ps07 Gaming Arena (Flagship Arena)",
+        slug: "ps07-gaming-arena",
+        upiVpa: "ps07gaming@okaxis",
         gstin: "07AAACK1234F1Z8",
         gstRate: 18,
-        invoicePrefix: "KGZ",
+        invoicePrefix: "PS07",
         status: "active",
       })
       .onConflictDoNothing();
@@ -75,8 +75,8 @@ async function runSeed() {
         {
           id: "usr-owner-1",
           tenantId: "tenant-kgz-001",
-          name: "Khushi Owner",
-          email: "owner@khushigaming.com",
+          name: "Ps07 Owner",
+          email: "owner@ps07gaming.com",
           phone: "9876543210",
           passwordHash,
           role: "owner",
@@ -86,7 +86,7 @@ async function runSeed() {
           id: "usr-manager-1",
           tenantId: "tenant-kgz-001",
           name: "Arjun Manager",
-          email: "manager@khushigaming.com",
+          email: "manager@ps07gaming.com",
           phone: "9876543211",
           passwordHash,
           role: "manager",
@@ -96,7 +96,7 @@ async function runSeed() {
           id: "usr-reception-1",
           tenantId: "tenant-kgz-001",
           name: "Mohit Receptionist",
-          email: "reception@khushigaming.com",
+          email: "reception@ps07gaming.com",
           phone: "9876543212",
           passwordHash: staffHash,
           role: "receptionist",

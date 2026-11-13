@@ -22,7 +22,7 @@ export interface IStorageProvider {
 export class MockStorageProvider implements IStorageProvider {
   async uploadBuffer(buffer: Buffer, options: UploadOptions): Promise<UploadResult> {
     const publicId = `${options.folder}/${options.filename.replace(/\.[^/.]+$/, "")}_${Date.now()}`;
-    const url = `https://res.cloudinary.com/khushi-gaming-demo/image/upload/v1700000000/${publicId}.pdf`;
+    const url = `https://res.cloudinary.com/ps07-gaming-demo/image/upload/v1700000000/${publicId}.pdf`;
     
     console.log(`[STORAGE MOCK] Uploaded ${buffer.length} bytes to ${url}`);
     
@@ -45,7 +45,7 @@ export class MockStorageProvider implements IStorageProvider {
       timestamp,
       signature,
       apiKey: "mock_api_key",
-      cloudName: "khushi-gaming-demo",
+      cloudName: "ps07-gaming-demo",
     };
   }
 }

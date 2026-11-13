@@ -19,28 +19,28 @@ export default function LoginPage() {
   const demoAccounts = [
     {
       role: "Platform Super Admin",
-      email: "superadmin@khushigaming.com",
+      email: "superadmin@ps07gaming.com",
       pass: "admin123",
       route: "/platform",
       badge: "Full SaaS",
     },
     {
       role: "Business Owner",
-      email: "owner@khushigaming.com",
+      email: "owner@ps07gaming.com",
       pass: "owner123",
       route: "/owner",
       badge: "Remote Control",
     },
     {
       role: "Shift Manager",
-      email: "manager@khushigaming.com",
+      email: "manager@ps07gaming.com",
       pass: "manager123",
       route: "/owner",
       badge: "Ops & Pricing",
     },
     {
       role: "Reception Desk",
-      email: "reception@khushigaming.com",
+      email: "reception@ps07gaming.com",
       pass: "reception123",
       route: "/reception",
       badge: "Live Board",
@@ -139,7 +139,7 @@ export default function LoginPage() {
         </div>
 
         <div className="relative z-10 text-xs text-slate-500 flex items-center justify-between">
-          <span>&copy; {new Date().getFullYear()} Khushi Gaming Zone SaaS</span>
+          <span>&copy; {new Date().getFullYear()} Ps07 Gaming Arena SaaS</span>
           <span className="flex items-center gap-1.5">
             <Shield className="w-3.5 h-3.5 text-emerald-400" />
             SOC2 & End-to-End Encrypted
@@ -204,7 +204,7 @@ export default function LoginPage() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="name@khushigaming.com"
+                  placeholder="name@ps07gaming.com"
                   required
                 />
               </div>

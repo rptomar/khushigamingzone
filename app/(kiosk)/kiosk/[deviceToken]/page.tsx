@@ -610,7 +610,7 @@ export default function KioskPage() {
                 Payment Successful!
               </h2>
               <p className="text-sm text-slate-300">
-                Thank you for playing at <span className="font-bold text-white">Khushi Gaming Zone</span>.
+                Thank you for playing at <span className="font-bold text-white">Ps07 Gaming Arena</span>.
               </p>
               <p className="text-xs text-slate-400">
                 Your official GST tax invoice has been sent to your WhatsApp.
@@ -655,7 +655,7 @@ export default function KioskPage() {
 
       {/* Bottom Kiosk Footer */}
       <footer className="relative z-20 flex items-center justify-between text-[11px] text-slate-500 w-full pt-4 border-t border-white/[0.06]">
-        <span>Khushi Gaming Zone Kiosk OS</span>
+        <span>Ps07 Gaming Arena Kiosk OS</span>
         <span className="font-mono">Device: {deviceToken}</span>
       </footer>
     </div>

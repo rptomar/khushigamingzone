@@ -1,13 +1,13 @@
 # DECISIONS.md — Architecture & Technical Choices
 
-This document logs all key design, engineering, and architectural decisions for the **Khushi Gaming Zone** SaaS platform.
+This document logs all key design, engineering, and architectural decisions for the **Ps07 Gaming Arena** SaaS platform.
 
 ---
 
 ## 1. Multi-Tenancy & Tenant Isolation
 - **Tenant Scope Enforcement:** All tenant-scoped database queries go through `lib/db/scoped.ts` (`getScopedDb(tenantId)`). The tenant ID is never trusted from the client; it is cryptographically verified from the authenticated JWT session or kiosk device token.
 - **Hierarchy:** Platform (Reseller) -> Tenant (Gaming Zone) -> Outlet (Branch) -> Resource (Table/Station) -> Device (Kiosk Tablet).
-- **Tenant #1 Seed:** "Khushi Gaming Zone HQ" serves as the primary tenant and default reseller.
+- **Tenant #1 Seed:** "Ps07 Gaming Arena HQ" serves as the primary tenant and default reseller.
 
 ## 2. Pluggable Providers & Mock-First Dev Architecture
 - **Mock Mode by Default:** `OTP_PROVIDER=mock`, `WHATSAPP_PROVIDER=mock`, `PAYMENT_PROVIDER=mock`.
@@ -50,7 +50,7 @@ This document logs all key design, engineering, and architectural decisions for 
 - **Customer Lifetime Value (LTV) Intelligence:** Centralized player CRM tracks total historical gaming spend, visit frequencies, preferred stations, and anti-theft session histories.
 
 ## 9. Reseller Multi-Tenant Architecture & SaaS Monetization
-- **Tenant #1 Master Reseller Model (`/platform`):** Khushi Gaming Zone acts both as Flagship Tenant #1 and as the Master SaaS Reseller, able to onboard third-party gaming clubs onto autonomous subdomains/slugs (`app.khushigaming.com/[slug]`).
+- **Tenant #1 Master Reseller Model (`/platform`):** Ps07 Gaming Arena acts both as Flagship Tenant #1 and as the Master SaaS Reseller, able to onboard third-party gaming clubs onto autonomous subdomains/slugs (`app.ps07gaming.com/[slug]`).
 - **Reseller Commission & Subscription Revenue:** Tracks active client clubs, managed table quotas (35+ tables across mall networks), and recurring subscription fees (Starter ₹2,999/mo, Pro ₹4,999/mo, Enterprise ₹8,999/mo).
 - **Remote Diagnostics & Scope Switcher:** Reseller super-admins can inspect remote table telemetries and suspend or reactivate subscriptions with real-time audit logs.
 

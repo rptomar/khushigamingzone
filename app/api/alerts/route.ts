@@ -40,7 +40,7 @@ export async function PATCH(req: NextRequest) {
       id: `audit-${Date.now()}`,
       tenantId: DEFAULT_TENANT_ID,
       actorId: "owner_admin",
-      actorName: "Khushi Owner",
+      actorName: "Ps07 Owner",
       actorRole: "owner",
       action: "resolve_alert",
       entity: "alert",

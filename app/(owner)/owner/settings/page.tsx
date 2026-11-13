@@ -35,9 +35,9 @@ export default function OwnerSettingsPage() {
   const [qrModalData, setQrModalData] = useState<{ url: string; qr: string; name: string } | null>(null);
 
   // Business Profile Settings
-  const [upiVpa, setUpiVpa] = useState("khushigaming@upi");
+  const [upiVpa, setUpiVpa] = useState("ps07gaming@upi");
   const [gstin, setGstin] = useState("27AAACK1234F1Z5");
-  const [invoicePrefix, setInvoicePrefix] = useState("KGZ");
+  const [invoicePrefix, setInvoicePrefix] = useState("PS07");
   const [savingSettings, setSavingSettings] = useState(false);
 
   const fetchSettingsData = async () => {

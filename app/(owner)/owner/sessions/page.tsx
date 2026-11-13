@@ -75,7 +75,7 @@ export default function SessionsHistoryPage() {
     link.setAttribute("href", encodedUri);
     link.setAttribute(
       "download",
-      `khushi-gaming-sessions-${new Date().toISOString().split("T")[0]}.csv`
+      `ps07-gaming-sessions-${new Date().toISOString().split("T")[0]}.csv`
     );
     document.body.appendChild(link);
     link.click();

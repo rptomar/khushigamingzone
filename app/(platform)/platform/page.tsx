@@ -150,11 +150,11 @@ export default function PlatformResellerPage() {
               SaaS Tenant Fleet & Reseller Network
             </h1>
             <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
-              Khushi Gaming Reseller
+              Ps07 Gaming Reseller
             </span>
           </div>
           <p className="text-xs text-slate-400 mt-1 max-w-2xl">
-            My client (Khushi Gaming Zone) operates as Tenant #1 and Master Reseller, provisioning autonomous gaming zone instances across malls and clubs.
+            My client (Ps07 Gaming Arena) operates as Tenant #1 and Master Reseller, provisioning autonomous gaming zone instances across malls and clubs.
           </p>
         </div>
 
@@ -195,7 +195,7 @@ export default function PlatformResellerPage() {
           <div className="text-2xl sm:text-3xl font-black font-mono text-emerald-400">
             {formatPaise(metrics.mrrPaise)}
           </div>
-          <p className="text-[11px] text-slate-500 mt-2">Earned monthly by Khushi Reseller</p>
+          <p className="text-[11px] text-slate-500 mt-2">Earned monthly by Ps07 Reseller</p>
         </div>
 
         <div className="p-5 rounded-2xl bg-[#0E0E18] border border-white/[0.08]">
@@ -267,7 +267,7 @@ export default function PlatformResellerPage() {
                       <td className="py-3.5 px-4">
                         <div className="text-slate-300 font-medium">{t.city}</div>
                         <div className="font-mono text-cyan-400 text-[10px]">
-                          app.khushigaming.com/{t.slug}
+                          app.ps07gaming.com/{t.slug}
                         </div>
                       </td>
 
@@ -344,7 +344,7 @@ export default function PlatformResellerPage() {
           Strict Row-Level Multi-Tenant Scoping Guarantee
         </h3>
         <p className="text-xs text-slate-400 max-w-3xl leading-relaxed">
-          Every query in Khushi Gaming Zone OS is routed through <code className="text-cyan-300 bg-white/[0.05] px-1.5 py-0.5 rounded">lib/db/scoped.ts</code> with a cryptographically verified tenant ID. Independent gaming zones can never leak customer data, table revenues, or telemetry to each other, ensuring full enterprise confidentiality.
+          Every query in Ps07 Gaming Arena OS is routed through <code className="text-cyan-300 bg-white/[0.05] px-1.5 py-0.5 rounded">lib/db/scoped.ts</code> with a cryptographically verified tenant ID. Independent gaming zones can never leak customer data, table revenues, or telemetry to each other, ensuring full enterprise confidentiality.
         </p>
       </div>
 

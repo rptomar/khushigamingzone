@@ -108,11 +108,10 @@ export default function AlertsAntiTheftPage() {
               Anti-Theft Shield & Anomalies
             </h1>
             <span
-              className={`px-2.5 py-0.5 rounded-full text-[11px] font-semibold border ${
-                activeAlerts.length > 0
+              className={`px-2.5 py-0.5 rounded-full text-[11px] font-semibold border ${activeAlerts.length > 0
                   ? "bg-rose-500/10 text-rose-400 border-rose-500/30 animate-pulse"
                   : "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"
-              }`}
+                }`}
             >
               {activeAlerts.length > 0 ? `${activeAlerts.length} Active Anomalies` : "All Tables Secure"}
             </span>
@@ -204,23 +203,21 @@ export default function AlertsAntiTheftPage() {
               return (
                 <div
                   key={alert.id}
-                  className={`p-5 rounded-2xl border transition-all flex flex-col md:flex-row md:items-center justify-between gap-4 ${
-                    isResolved
+                  className={`p-5 rounded-2xl border transition-all flex flex-col md:flex-row md:items-center justify-between gap-4 ${isResolved
                       ? "bg-white/[0.01] border-white/[0.05] opacity-60"
                       : isCritical
-                      ? "bg-rose-950/20 border-rose-500/40"
-                      : "bg-[#0E0E18] border-amber-500/30"
-                  }`}
+                        ? "bg-rose-950/20 border-rose-500/40"
+                        : "bg-[#0E0E18] border-amber-500/30"
+                    }`}
                 >
                   <div className="flex items-start gap-4">
                     <div
-                      className={`p-2.5 rounded-xl mt-0.5 ${
-                        isCritical
+                      className={`p-2.5 rounded-xl mt-0.5 ${isCritical
                           ? "bg-rose-500/20 text-rose-400"
                           : isResolved
-                          ? "bg-emerald-500/20 text-emerald-400"
-                          : "bg-amber-500/20 text-amber-400"
-                      }`}
+                            ? "bg-emerald-500/20 text-emerald-400"
+                            : "bg-amber-500/20 text-amber-400"
+                        }`}
                     >
                       {isResolved ? (
                         <CheckCircle2 className="w-5 h-5" />
@@ -234,11 +231,10 @@ export default function AlertsAntiTheftPage() {
                     <div>
                       <div className="flex flex-wrap items-center gap-2">
                         <span
-                          className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${
-                            isCritical
+                          className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${isCritical
                               ? "bg-rose-500/10 text-rose-300 border border-rose-500/30"
                               : "bg-amber-500/10 text-amber-300 border border-amber-500/30"
-                          }`}
+                            }`}
                         >
                           {alert.severity}
                         </span>
@@ -291,7 +287,7 @@ export default function AlertsAntiTheftPage() {
       <div className="p-6 rounded-2xl bg-gradient-to-br from-violet-950/20 via-[#0E0E18] to-cyan-950/20 border border-white/[0.08]">
         <h3 className="text-base font-bold text-white mb-4 flex items-center gap-2">
           <ShieldCheck className="w-5 h-5 text-violet-400" />
-          The 7 Anti-Theft Pillars of Khushi Gaming Zone OS
+          The 7 Anti-Theft Pillars of Ps07 Gaming Arena OS
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs text-slate-300">

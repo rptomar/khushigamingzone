@@ -105,7 +105,7 @@ export function KhushiLogo({
               textSizes[size]
             )}
           >
-            Khushi
+            Ps07
           </span>
           <span
             className={cn(
@@ -113,7 +113,7 @@ export function KhushiLogo({
               textSizes[size]
             )}
           >
-            Gaming Zone
+            Gaming Arena
           </span>
         </div>
         {showTagline && (
@@ -131,4 +131,6 @@ export function KhushiLogo({
 
   return content;
 }
+
+export const Ps07Logo = KhushiLogo;
 

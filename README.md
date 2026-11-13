@@ -1,6 +1,6 @@
-# 🎱 Khushi Gaming Zone — Premium Multi-Tenant Gaming Zone OS
+# 🎱 Ps07 Gaming Arena — Premium Multi-Tenant Gaming Zone OS
 
-> **The Anti-Theft Gaming Zone Operating System** that turns idle tables into revenue, replaces manual notebooks, and eliminates staff cash pocketing with touch kiosks, OTP logins, dynamic UPI QR billing, and remote owner telemetrics.
+> **The Automated Gaming Zone Operating System** that turns idle tables into revenue, replaces manual notebooks, and eliminates staff cash pocketing with touch kiosks, OTP logins, dynamic UPI QR billing, and remote owner telemetrics.
 
 Built in **ONE Next.js 15 project** (frontend + backend in the same repo, no separate server), deployable directly to Vercel and Neon Postgres.
 
@@ -14,14 +14,14 @@ In typical gaming lounges (snooker, pool, PS5, table tennis, arcade), owners los
 - Unbilled "ghost games" occur after hours or when the owner is away.
 - Cluttered notebooks cause billing disputes and slow down table turnaround.
 
-**Khushi Gaming Zone OS permanently solves this:**
+**Ps07 Gaming Arena OS permanently solves this:**
 1. **Touchscreen Table Kiosks:** Every station has a tablet in kiosk mode. Customers log in with **Phone Number + OTP**, choose an **Hourly** or **VIP Membership Pass**, and start play.
 2. **Server-Authoritative Metering:** The stopwatch bill counts up strictly using server UTC time. System clocks on tablets cannot be tampered with.
 3. **Audible Reception Desk:** When the player taps "End Session", the reception live board alerts staff with an audio chime to confirm stopping.
 4. **Instant Dynamic UPI QR Code:** Reception confirmation generates an exact UPI QR code (`upi://pay?pa=...`) on the table screen. Payment is detected automatically or marked by reception with full audit logging.
 5. **Electronic PDF Invoices & WhatsApp Delivery:** Immediately streams a professional GST invoice PDF directly to the customer's WhatsApp.
 6. **Executive Owner Telemetry:** The owner monitors live arena occupancy, table status glows, cash vs UPI collections, and automated anti-theft anomaly alerts on their mobile phone from anywhere in the world.
-7. **Master Reseller Engine:** Khushi Gaming Zone acts both as Flagship Tenant #1 and as the master SaaS reseller, capable of onboarding client gaming clubs and billing them monthly or yearly.
+7. **Master Reseller Engine:** Ps07 Gaming Arena acts both as Flagship Tenant #1 and as the master SaaS reseller, capable of onboarding client gaming clubs and billing them monthly or yearly.
 
 ---
 
@@ -43,8 +43,8 @@ In typical gaming lounges (snooker, pool, PS5, table tennis, arcade), owners los
 
 ```mermaid
 graph TD
-    Platform["Platform (Super Admin)"] --> Reseller["Reseller (Khushi HQ)"]
-    Reseller --> Tenant1["Tenant #1: Khushi Gaming Zone Flagship"]
+    Platform["Platform (Super Admin)"] --> Reseller["Reseller (Ps07 HQ)"]
+    Reseller --> Tenant1["Tenant #1: Ps07 Gaming Arena Flagship"]
     Reseller --> Tenant2["Tenant #2: Velocity Cue Sports"]
     Reseller --> Tenant3["Tenant #3: Apex Snooker Lounge"]
     Tenant1 --> Outlet1["Mall Outlet #1: Nexus Mall Flagship"]
@@ -153,7 +153,7 @@ Follow this 5-minute flow to demonstrate the full end-to-end OS:
    - In server logs, observe the WhatsApp dispatch sending the generated invoice PDF link to the customer.
 
 5. **Inspect Executive Owner Hub (`/owner`):**
-   - Log in as Owner (`owner@khushigaming.com` / `KhushiAdmin@2026`).
+   - Log in as Owner (`owner@ps07gaming.com` / `Ps07Admin@2026`).
    - View Today's revenue updated with the completed session and cash/UPI split.
    - Check the **Interactive Floor Map** and 7-day revenue trend chart.
 
@@ -194,7 +194,7 @@ DATABASE_URL="your-neon-connection-string" pnpm db:seed
    - `DATABASE_URL`: Your Neon Postgres connection string
    - `JWT_SECRET`: A secure 32+ character string
    - `CRON_SECRET`: A secret string for Vercel Cron jobs
-   - `APP_URL`: Your Vercel production URL (e.g. `https://khushigamingzone.vercel.app`)
+   - `APP_URL`: Your Vercel production URL (e.g. `https://ps07gaming.vercel.app`)
    - `OTP_PROVIDER`: `mock` (or `msg91` in production)
    - `PAYMENT_PROVIDER`: `mock` (or `razorpay` in production)
    - `WHATSAPP_PROVIDER`: `mock` (or `meta` in production)
@@ -214,5 +214,5 @@ DATABASE_URL="your-neon-connection-string" pnpm db:seed
 
 ## 📜 9. License & Credits
 
-Built with precision for **Khushi Gaming Zone** — Flagship Lounge & Smart Gaming Zone Operating System.
+Built with precision for **Ps07 Gaming Arena** — Flagship Lounge & Smart Gaming Zone Operating System.
 Designed and engineered for world-class speed, anti-fraud reliability, and seamless multi-tenant scalability.

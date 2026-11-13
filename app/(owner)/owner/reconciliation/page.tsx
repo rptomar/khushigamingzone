@@ -29,7 +29,7 @@ export default function CashReconciliationPage() {
   const [notes20, setNotes20] = useState<number>(0);
   const [coins10, setCoins10] = useState<number>(0);
 
-  const [auditedBy, setAuditedBy] = useState("Khushi Owner (Admin)");
+  const [auditedBy, setAuditedBy] = useState("Ps07 Owner (Admin)");
   const [auditNotes, setAuditNotes] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 

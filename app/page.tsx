@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import { KhushiLogo } from "@/components/premium/KhushiLogo";
 import { formatPaise } from "@/lib/utils";
 import {
@@ -18,10 +19,30 @@ import {
   Calculator,
   Play,
   Banknote,
+  Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const ROTATING_LINES = [
+  "Idle Tables Into Profit.",
+  "Every Minute Into Revenue.",
+  "Every Match Into Cashflow.",
+  "Table Chaos Into Control.",
+  "Walk-Ins Into Loyal VIPs.",
+  "Unbilled Games Into Zero Leakage.",
+];
+
 export default function MarketingLandingPage() {
+  // Rotating interactive hero text
+  const [lineIndex, setLineIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setLineIndex((prev) => (prev + 1) % ROTATING_LINES.length);
+    }, 3200);
+    return () => clearInterval(timer);
+  }, []);
+
   // Interactive Live Demo Table State
   const [demoStep, setDemoStep] = useState<"idle" | "running" | "stopping" | "billed">("idle");
   const [demoSeconds, setDemoSeconds] = useState(0);
@@ -109,16 +130,46 @@ export default function MarketingLandingPage() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.08] max-w-5xl mx-auto">
-            The Anti-Theft Gaming OS That Turns{" "}
-            <span className="bg-gradient-to-r from-violet-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">
-              Idle Tables Into Profit.
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] max-w-5xl mx-auto">
+            The Automated Gaming OS That Turns{" "}
+            <span className="inline-block relative min-h-[1.25em] align-top">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={lineIndex}
+                  initial={{ opacity: 0, y: 22, filter: "blur(6px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, y: -22, filter: "blur(6px)" }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="bg-gradient-to-r from-violet-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent inline-block cursor-pointer select-none"
+                  onClick={() => setLineIndex((prev) => (prev + 1) % ROTATING_LINES.length)}
+                  title="Click to switch line"
+                >
+                  {ROTATING_LINES[lineIndex]}
+                </motion.span>
+              </AnimatePresence>
             </span>
           </h1>
 
+          {/* Interactive Line Switcher Pills */}
+          <div className="flex items-center justify-center gap-2 mt-4 mb-2">
+            {ROTATING_LINES.map((line, idx) => (
+              <button
+                key={line}
+                onClick={() => setLineIndex(idx)}
+                className={`transition-all duration-300 rounded-full ${
+                  lineIndex === idx
+                    ? "w-8 h-2 bg-gradient-to-r from-violet-400 to-cyan-400 shadow-md shadow-violet-500/40"
+                    : "w-2 h-2 bg-white/20 hover:bg-white/50"
+                }`}
+                aria-label={`Jump to: ${line}`}
+                title={line}
+              />
+            ))}
+          </div>
+
           {/* Subtitle */}
           <p className="mt-6 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Paper notebooks and unrecorded games steal money from your gaming zone every day. Khushi Gaming Zone OS replaces notebooks with touch kiosks, OTP logins, dynamic UPI QR billing, and remote owner telemetrics.
+            Paper notebooks and unrecorded games steal money from your gaming zone every day. Ps07 Gaming Arena OS replaces notebooks with touch kiosks, OTP logins, dynamic UPI QR billing, and remote owner telemetrics.
           </p>
 
           {/* Hero CTAs */}
@@ -317,7 +368,7 @@ export default function MarketingLandingPage() {
             Why Traditional Notebooks Steal From You
           </h2>
           <p className="text-sm text-slate-400 mt-3 leading-relaxed">
-            In typical gaming lounges, staff pocket cash walk-ins, start off-the-record games for friends, and skip bills. Here is how Khushi OS eliminates theft permanently:
+            In typical gaming lounges, staff pocket cash walk-ins, start off-the-record games for friends, and skip bills. Here is how Ps07 Gaming Arena OS eliminates theft permanently:
           </p>
         </div>
 
@@ -443,7 +494,7 @@ export default function MarketingLandingPage() {
                   {formatPaise(estimatedLeakPaise)}
                 </div>
                 <div className="text-xs text-emerald-400 font-semibold">
-                  Khushi OS recovers 100% of this leakage in month 1.
+                  Ps07 Gaming Arena OS recovers 100% of this leakage in month 1.
                 </div>
                 <Link href="/owner">
                   <Button className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs h-10 mt-3">
@@ -597,7 +648,7 @@ export default function MarketingLandingPage() {
       <footer className="border-t border-white/[0.08] bg-[#07070B] py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-500">
           <KhushiLogo size="sm" href="/" />
-          <p>© 2026 Khushi Gaming Zone OS. All rights reserved. Master Tenant & SaaS Reseller Platform.</p>
+          <p>© 2026 Ps07 Gaming Arena OS. All rights reserved. Master Tenant & SaaS Reseller Platform.</p>
           <div className="flex items-center gap-4">
             <Link href="/login" className="hover:text-white transition-colors">
               Staff Desk
